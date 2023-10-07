@@ -1,14 +1,9 @@
 import React from "react";
 import { styled, alpha } from "@mui/material/styles";
+import { AppBar, Box, Toolbar, InputBase, Typography, SearchIcon } from "@mui/material" 
 import CartWidget from "./CartWidget";
 import "./NavBar.css";
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-// import SearchIconWrapper from "@mui/icons-material/Search";
-import Toolbar from "@mui/material/Toolbar";
-import InputBase from "@mui/material/InputBase";
-import Typography from "@mui/material/Typography";
-import SearchIcon from "@mui/icons-material/Search";
+
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
