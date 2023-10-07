@@ -1,8 +1,13 @@
 import React from 'react'
+import Typography from '@mui/material/Typography';
+import './ItemListContainer.css'
+import { Box } from '@mui/material';
 
 const ItemListContainer = ({greeting}) => {
   return (
-    <h3>{greeting}</h3>
+    <Box flexGrow={ 2 }>
+      <Typography variant='h4' color={ '#fff' } marginTop={ 1 }>{greeting}</Typography>
+    </Box>
   )
 }
 
