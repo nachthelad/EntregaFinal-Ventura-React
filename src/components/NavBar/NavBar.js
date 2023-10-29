@@ -1,16 +1,24 @@
 import React from "react";
 import { styled, alpha } from "@mui/material/styles";
-import { AppBar, Box, Toolbar, InputBase, Typography, SearchIcon } from "@mui/material" 
-import CartWidget from "./CartWidget";
+import {
+  AppBar,
+  Box,
+  Toolbar,
+  InputBase,
+  Typography,
+  Button,
+} from "@mui/material";
+import CartWidget from "../CartWidget/CartWidget";
+import SearchIcon from "@mui/icons-material/Search";
 import "./NavBar.css";
-
+import { Link } from "react-router-dom";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
   borderRadius: "1rem",
-  backgroundColor: alpha('#000', 0.35),
+  backgroundColor: alpha("#000", 0.35),
   "&:hover": {
-    backgroundColor: alpha('#000', 0.45),
+    backgroundColor: alpha("#000", 0.45),
   },
   marginLeft: 0,
   width: "100%",
@@ -56,9 +64,22 @@ const NavBar = () => {
             noWrap
             component="div"
             sx={{ display: { xs: "none", sm: "block" } }}>
-            MarAbierto
+            <Link href="/" style={{color: 'white', textDecoration: 'none'}}>
+              MarAbierto
+            </Link>
           </Typography>
-          <Box sx={{ flexGrow: 0.9 }} />
+          <Box sx={{ flexGrow: 1 }} />
+          <Button
+            sx={{ my: 2, color: "white", display: "block" }}
+            href="/category/celulares">
+            Celulares
+          </Button>
+          <Button
+            sx={{ my: 2, color: "white", display: "block" }}
+            href="/category/notebooks">
+            Notebooks
+          </Button>
+          <Box sx={{ flexGrow: 0.1 }} />
           <Search>
             <SearchIconWrapper>
               <SearchIcon />
@@ -68,11 +89,19 @@ const NavBar = () => {
               inputProps={{ "aria-label": "search" }}
             />
           </Search>
+          <Box sx={{ flexGrow: 0.1 }} />
+          <Button
+            sx={{ my: 2, color: "white", display: "block" }}
+            href="/category/auriculares">
+            Auriculares
+          </Button>
+          <Button
+            sx={{ my: 2, color: "white", display: "block" }}
+            href="/category/smartwatches">
+            SmartWatches
+          </Button>
           <Box sx={{ flexGrow: 1 }} />
-
-          {/* Aqui esta el componente del CartWidget */}
           <CartWidget />
-          
         </Toolbar>
       </AppBar>
     </Box>
