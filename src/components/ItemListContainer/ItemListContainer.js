@@ -7,7 +7,7 @@ import Typography from "@mui/material/Typography";
 import { Box } from "@mui/material";
 import { useParams } from "react-router-dom";
 
-const ItemListContainer = ({ greeting }) => {
+const ItemListContainer = ({ greeting, title }) => {
   const [item, setItem] = useState([]);
   const { id } = useParams();
 
@@ -34,6 +34,9 @@ const ItemListContainer = ({ greeting }) => {
       <Box flexGrow={2}>
         <Typography variant="h4" color={"#fff"} marginTop={1} marginBottom={2}>
           {greeting}
+        </Typography>
+        <Typography variant="h6" color={"#fff"} marginTop={1} marginBottom={1}>
+          {title}
         </Typography>
         <ItemList item={item} />
         </Box>

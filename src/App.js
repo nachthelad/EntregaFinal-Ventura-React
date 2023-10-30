@@ -12,7 +12,7 @@ function App() {
           <Routes>
             <Route
               path='/'
-              element={<ItemListContainer greeting="Welcome to MarAbierto" />}/>
+              element={<ItemListContainer greeting="Welcome to MarAbierto" title="El marketplace de NFT más grande de Latinoamérica" />}/>
             <Route path='/category/:id' element={<ItemListContainer />} />
             <Route path='/item/:id' element={<ItemDetailContainer />}/>
             <Route path='*' element={<Error />} />
