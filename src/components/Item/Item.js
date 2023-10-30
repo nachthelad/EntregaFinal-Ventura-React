@@ -15,7 +15,7 @@ const Item = ({ item }) => {
             image={item.imagen}
           />
           <Typography variant="h6" display="block" gutterBottom>
-            {item.nombre} - ${item.precio}
+            {item.nombre} - {item.precio} ETH
           </Typography>
         </Box>
       </Card>

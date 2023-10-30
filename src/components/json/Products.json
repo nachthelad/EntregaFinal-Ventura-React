@@ -1,92 +1,110 @@
 [
   {
     "id": 1,
-    "nombre": "iPhone 13 pro",
-    "descripcion": "iPhone 13 Pro 512 GB - Grafito (Graphite)",
-    "imagen": "https://www.macstation.com.ar/img/productos/2594-1.jpg",
-    "precio": 220000,
-    "stock": 10,
-    "categoria": "celulares"
+    "nombre": "Groupie #1637",
+    "descripcion": "Peaceful Groupies",
+    "imagen": "https://i.seadn.io/gae/XkYT0niAKsF2oiRqk_B49gwt_s6F1GTE9QKm7trI9tpVixmWpnLOIHh5yfoXRj7bbbm_oH_0b_dlGGJAspC2E9GapIeqc20IOFUy?auto=format&dpr=1&w=1000",
+    "precio": 0.012,
+    "stock": 1,
+    "categoria": "Peaceful Groupies"
   },
   {
     "id": 2,
-    "nombre": "Samsung S23 ",
-    "descripcion": "Celular Galaxy S23 Phantom black",
-    "imagen": "https://samsungar.vtexassets.com/arquivos/ids/186560-800-auto?width=800&height=auto&aspect=true",
-    "precio": 50000,
-    "stock": 10,
-    "categoria": "celulares"
+    "nombre": "Groupie #7849",
+    "descripcion": "Peaceful Groupies",
+    "imagen": "https://openseauserdata.com/files/b50c03699ea430f0c911bf3506b43a16.gif?auto=format&dpr=1&w=1000",
+    "precio": 0.058,
+    "stock": 1,
+    "categoria": "Peaceful Groupies"
   },
   {
     "id": 3,
-    "nombre": "Motorola G52",
-    "descripcion": "Celular libre Motorola moto G52 6GB 128GB azul",
-    "imagen": "https://carrefourar.vtexassets.com/arquivos/ids/250996-1600-auto?v=637933178054400000&width=1600&height=auto&aspect=true",
-    "precio": 120000,
-    "stock": 10,
-    "categoria": "celulares"
+    "nombre": "Groupie #1637",
+    "descripcion": "Peaceful Groupies",
+    "imagen": "https://i.seadn.io/gae/ZrxhCefn2chltPfMaINZAklLmjYUqPc_zoeRFk3bzqj70jUnRoAmLfXkfuZ1IJCIybpF7iLmeXAWOJkaqkHjpCVNorDxL5BBfZTiBQ?auto=format&dpr=1&w=1000",
+    "precio": 0.014,
+    "stock": 1,
+    "categoria": "Peaceful Groupies"
   },
   {
     "id": 4,
-    "nombre": "Macbook Air Pro",
-    "descripcion": "MACBOOK PRO 16' M1 PRO CHIP 10-CORE CPU 16-CORE GPU - 1TB SSD – SILVER - APPLE",
-    "imagen": "https://www.megatone.net/images/Articulos/zoom2x/200/01/MKT0274ETC.jpg",
-    "precio": 2000,
-    "stock": 10,
-    "categoria": "notebooks"
+    "nombre": "BYAC #8155",
+    "descripcion": "Bored Ape Yacht Club",
+    "imagen": "https://i.seadn.io/gae/-HScVF51YX5zmB2odKHOoDwj6zBRitjamCgZCOLWDL0IHH8nHmIl5Ze94Ksgsa1FcaZAcFE7LHRxPxoCJA_25h6TrXHT5UG163FRu4Y?auto=format&dpr=1&w=1000",
+    "precio": 30.6,
+    "stock": 1,
+    "categoria": "Bored Ape Yacht Club"
   },
   {
     "id": 5,
-    "nombre": "Notebook Dell Inspiron",
-    "descripcion": "NOTEBOOK DELL INSPIRON 15-3511 INTEL CORE I3",
-    "imagen": "https://medias.musimundo.com/medias/00677002-147995-147995-01-147995-01.jpg-size515?context=bWFzdGVyfGltYWdlc3w0MTgwNnxpbWFnZS9qcGVnfGhmMC9oMWMvMTA0NDk4NDAxNzcxODIvMDA2NzcwMDItMTQ3OTk1LTE0Nzk5NV8wMS0xNDc5OTVfMDEuanBnX3NpemU1MTV8N2Y5YmJlNmZmZDY0MzFjNTEwNWM4MTgyYWM5MjFkZTgwM2NmZDY1YzBkZjQ3YTkyNjM3ZjQzZTMzNDJiNGRjOQ",
-    "precio": 1300,
-    "stock": 10,
-    "categoria": "notebooks"
+    "nombre": "BAYC #7438",
+    "descripcion": "Bored Ape Yacht Club",
+    "imagen": "https://i.seadn.io/gae/uSV-JDzcfjfN5kaV-OSBUm5w7td1LQ5FVzdfiBJ7FkNuosMut_PkfviDCX8rRc8P18MScdBQLIsZZW_fx4v5UeER0bfLzqZMgRzA?auto=format&dpr=1&w=1000",
+    "precio": 31,
+    "stock": 1,
+    "categoria": "Bored Ape Yacht Club"
   },
   {
     "id": 6,
-    "nombre": "Auricular Bluetooth Samsung",
-    "descripcion": "AURICULAR BLUETOOTH SAMSUNG SM-R177NZKAARO",
-    "imagen": "https://medias.musimundo.com/medias/00432008-177681-177681-01.png-177681-01.png-size515?context=bWFzdGVyfGltYWdlc3w0NjY1MjB8aW1hZ2UvcG5nfGg5ZC9oN2YvMTA0MzQwNTk1NjcxMzQvMDA0MzIwMDgtMTc3NjgxLTE3NzY4MV8wMS5wbmctMTc3NjgxXzAxLnBuZ19zaXplNTE1fGU5OTg4ODBlOTAzNDBjNTJmYjQzZTQzNDc1ZDhmZjYwODc2ZjFiNmY2ZmUxMWNjMjBhMGQ2Nzk3NjcyZDViNmI",
-    "precio": 100,
-    "stock": 10,
-    "categoria": "auriculares"
+    "nombre": "BAYC #367",
+    "descripcion": "Bored Ape Yacht Club",
+    "imagen": "https://i.seadn.io/gae/YqnR6aaiaH9OSrkEuTR87IpoQNbOMrW3qtqxWfV6AgTGlNNngLnv0f_JGolUwAQA2-LL4Zg3WKjIJsdVcMz4Y4Y8ilIOErLYnxr_XQ?auto=format&dpr=1&w=1000",
+    "precio": 32.6,
+    "stock": 1,
+    "categoria": "Bored Ape Yacht Club"
   },
   {
     "id": 7,
-    "nombre": "Auriculares Logitech Gamer",
-    "descripcion": "AURICULAR GAMER LOGITECH G635",
-    "imagen": "https://medias.musimundo.com/medias/00317174-140546-140546-01-140546-01.jpg-size515?context=bWFzdGVyfGltYWdlc3wzODkyN3xpbWFnZS9qcGVnfGg2My9oYjAvMTAzNzk4MDMxOTc0NzAvMDAzMTcxNzQtMTQwNTQ2LTE0MDU0Nl8wMS0xNDA1NDZfMDEuanBnX3NpemU1MTV8YjExZmRlYTBkM2Y0ZGFiOTQ5YjU5OTdlYzE2ZTBhOTFjM2M3YmIzZjJiYmZjYWZhNWI5ZjgxZmY1MTc4YzNmNw",
-    "precio": 80,
-    "stock": 10,
-    "categoria": "auriculares"
+    "nombre": "BAYC #8916",
+    "descripcion": "Bored Ape Yacht Club",
+    "imagen": "https://i.seadn.io/gae/5ildyeGDiBzVx2F5HIxpA5ytq_Wgdj8naGqpItsDs3ooDlZV344vGOED0ZYbC0tzc6YWk7tBi8KC8n3cunyoZWmC6k1Tnd0-zoCZ?auto=format&dpr=1&w=1000",
+    "precio": 34.9,
+    "stock": 1,
+    "categoria": "Bored Ape Yacht Club"
   },
   {
     "id": 8,
-    "nombre": "Apple AirPods",
-    "descripcion": "Apple Airpods 2",
-    "imagen": "https://www.macstation.com.ar/img/productos/1407-apple-airpods-2.jpg",
-    "precio": 500,
-    "stock": 10,
-    "categoria": "auriculares"
+    "nombre": "Azuki #2987",
+    "descripcion": "Azuki",
+    "imagen": "https://i.seadn.io/s/raw/files/23d28487723fdf1fcf733b364e867d2e.png?auto=format&dpr=1&w=1000",
+    "precio": 5.25,
+    "stock": 1,
+    "categoria": "Azuki"
   },
   {
     "id": 9,
-    "nombre": "Apple Watch",
-    "descripcion": "Apple Watch SE",
-    "imagen": "https://www.macstation.com.ar/img/productos/3230-3.jpg",
-    "precio": 200,
-    "stock": 10,
-    "categoria": "smartwatches"
+    "nombre": "Azuki #5068",
+    "descripcion": "Azuki",
+    "imagen": "https://i.seadn.io/s/raw/files/14ff2111e7e0a1503a4617f6ca1ce311.png?auto=format&dpr=1&w=1000",
+    "precio": 5.29,
+    "stock": 1,
+    "categoria": "Azuki"
   },
   {
     "id": 10,
-    "nombre": "Samsung Galaxy Watch",
-    "descripcion": "Galaxy Watch5 Bluetooth (40mm)",
-    "imagen": "https://images.samsung.com/is/image/samsung/p6pim/ar/2208/gallery/ar-galaxy-watch5-40mm-sm-r900nzaaaro-533193311?$1300_1038_PNG$",
-    "precio": 170,
-    "stock": 10,
-    "categoria": "smartwatches"
+    "nombre": "Azuki #9917",
+    "descripcion": "Azuki",
+    "imagen": "https://i.seadn.io/s/raw/files/47320bf71fc8c44b1c751a82f65f4d59.png?auto=format&dpr=1&w=1000",
+    "precio": 5.4,
+    "stock": 1,
+    "categoria": "Azuki"
+  },
+  {
+    "id": 11,
+    "nombre": "Azuki #5665",
+    "descripcion": "Azuki",
+    "imagen": "https://i.seadn.io/s/raw/files/0721f16085b9cf86509ff427f9e9699f.png?auto=format&dpr=1&w=1000",
+    "precio": 5.75,
+    "stock": 1,
+    "categoria": "Azuki"
+  },
+  {
+    "id": 12,
+    "nombre": "Nakamigos #16917",
+    "descripcion": "Nakamigos",
+    "imagen": "https://i.seadn.io/s/raw/files/3cdb8bde6b8e581886baff51a41cfa34.png?auto=format&dpr=1&w=1000",
+    "precio": 0.2,
+    "stock": 1,
+    "categoria": "Nakamigos"
   }
 ]

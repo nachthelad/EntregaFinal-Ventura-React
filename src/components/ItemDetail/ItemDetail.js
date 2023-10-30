@@ -35,7 +35,7 @@ const ItemDetail = ({ item }) => {
           <Item>
             <Typography variant='h4'>{item.nombre}</Typography>
             <Typography  variant='h6'>{item.descripcion}</Typography>
-            <Typography  variant='h6'> ${item.precio}</Typography>
+            <Typography  variant='h6'> {item.precio} ETH</Typography>
             <Typography  variant='button'> Cantidad: {item.stock}</Typography>
             <Button variant="contained" sx={{display: 'block', marginLeft: 23}}>Comprar</Button>
           </Item>

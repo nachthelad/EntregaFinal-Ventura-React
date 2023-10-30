@@ -7,11 +7,12 @@ import {
   InputBase,
   Typography,
   Button,
+  Link,
 } from "@mui/material";
 import CartWidget from "../CartWidget/CartWidget";
 import SearchIcon from "@mui/icons-material/Search";
 import "./NavBar.css";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -71,13 +72,13 @@ const NavBar = () => {
           <Box sx={{ flexGrow: 1 }} />
           <Button
             sx={{ my: 2, color: "white", display: "block" }}
-            href="/category/celulares">
-            Celulares
+            href="/category/Peaceful Groupies">
+            Peaceful Groupies
           </Button>
           <Button
             sx={{ my: 2, color: "white", display: "block" }}
-            href="/category/notebooks">
-            Notebooks
+            href="/category/Bored Ape Yacht Club">
+            Bored Ape Yacht Club
           </Button>
           <Box sx={{ flexGrow: 0.1 }} />
           <Search>
@@ -92,13 +93,13 @@ const NavBar = () => {
           <Box sx={{ flexGrow: 0.1 }} />
           <Button
             sx={{ my: 2, color: "white", display: "block" }}
-            href="/category/auriculares">
-            Auriculares
+            href="/category/Azuki">
+            Azuki
           </Button>
           <Button
             sx={{ my: 2, color: "white", display: "block" }}
-            href="/category/smartwatches">
-            SmartWatches
+            href="/category/Nakamigos">
+            Nakamigos
           </Button>
           <Box sx={{ flexGrow: 1 }} />
           <CartWidget />

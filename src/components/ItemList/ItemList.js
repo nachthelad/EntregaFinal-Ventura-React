@@ -13,6 +13,8 @@ const ItemList = ({ item }) => {
             display: "inline-block",
             mx: "2px",
             transform: "scale(0.9)",
+            borderRadius: "15px",
+            boxShadow: "5"
           }}>
           <Item item={item} />
         </Card>
