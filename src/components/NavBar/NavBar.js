@@ -1,14 +1,7 @@
 import React from "react";
 import { styled, alpha } from "@mui/material/styles";
-import {
-  AppBar,
-  Box,
-  Toolbar,
-  InputBase,
-  Typography,
-  Button,
-  Link,
-} from "@mui/material";
+import { AppBar, Box, Toolbar, InputBase, Typography } from "@mui/material";
+import { Link } from "react-router-dom";
 import CartWidget from "../CartWidget/CartWidget";
 import SearchIcon from "@mui/icons-material/Search";
 import "./NavBar.css";
@@ -65,21 +58,41 @@ const NavBar = () => {
             noWrap
             component="div"
             sx={{ display: { xs: "none", sm: "block" } }}>
-            <Link href="/" style={{color: 'white', textDecoration: 'none'}}>
+            <Link to="/" style={{ color: "white", textDecoration: "none" }}>
               MarAbierto
             </Link>
           </Typography>
           <Box sx={{ flexGrow: 1 }} />
-          <Button
-            sx={{ my: 2, color: "white", display: "block" }}
-            href="/category/Peaceful Groupies">
+          <Typography
+            variant="button"
+            noWrap
+            component={Link}
+            to="/category/Peaceful Groupies"
+            sx={{
+              textDecoration: "none",
+              color: "white",
+              backgroundColor: "#03a9f4",
+              padding: "10px 20px",
+              borderRadius: "4px",
+              display: "inline-block",
+            }}>
             Peaceful Groupies
-          </Button>
-          <Button
-            sx={{ my: 2, color: "white", display: "block" }}
-            href="/category/Bored Ape Yacht Club">
+          </Typography>
+          <Typography
+            variant="button"
+            noWrap
+            component={Link}
+            to="/category/Bored Ape Yacht Club"
+            sx={{
+              textDecoration: "none",
+              color: "white",
+              backgroundColor: "#03a9f4",
+              padding: "10px 20px",
+              borderRadius: "4px",
+              display: "inline-block",
+            }}>
             Bored Ape Yacht Club
-          </Button>
+          </Typography>
           <Box sx={{ flexGrow: 0.1 }} />
           <Search>
             <SearchIconWrapper>
@@ -91,16 +104,36 @@ const NavBar = () => {
             />
           </Search>
           <Box sx={{ flexGrow: 0.1 }} />
-          <Button
-            sx={{ my: 2, color: "white", display: "block" }}
-            href="/category/Azuki">
+          <Typography
+            variant="button"
+            noWrap
+            component={Link}
+            to="/category/Azuki"
+            sx={{
+              textDecoration: "none",
+              color: "white",
+              backgroundColor: "#03a9f4",
+              padding: "10px 20px",
+              borderRadius: "4px",
+              display: "inline-block",
+            }}>
             Azuki
-          </Button>
-          <Button
-            sx={{ my: 2, color: "white", display: "block" }}
-            href="/category/Nakamigos">
+          </Typography>
+          <Typography
+            variant="button"
+            noWrap
+            component={Link}
+            to="/category/Nakamigos"
+            sx={{
+              textDecoration: "none",
+              color: "white",
+              backgroundColor: "#03a9f4",
+              padding: "10px 20px",
+              borderRadius: "4px",
+              display: "inline-block",
+            }}>
             Nakamigos
-          </Button>
+          </Typography>
           <Box sx={{ flexGrow: 1 }} />
           <CartWidget />
         </Toolbar>
