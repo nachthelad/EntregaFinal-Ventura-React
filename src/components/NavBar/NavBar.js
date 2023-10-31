@@ -15,7 +15,7 @@ const Search = styled("div")(({ theme }) => ({
   },
   marginLeft: 0,
   width: "100%",
-  [theme.breakpoints.up("sm")]: {
+  [theme.breakpoints.up("md")]: {
     marginLeft: theme.spacing(1),
     width: "auto",
   },
@@ -49,19 +49,18 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 const NavBar = () => {
   return (
-    <Box sx={{ flexGrow: 2, color: "#357a38" }}>
+    <Box sx={{ flexGrow: 1, color: "#357a38" }}>
       <AppBar position="static" sx={{ backgroundColor: "#03a9f4" }}>
         <Toolbar>
           <Typography
             variant="h5"
-            noWrap
             component="div"
-            sx={{ display: { xs: "none", sm: "block" } }}>
+            sx={{ display: { md: "block", marginRight: '10px' } }}>
             <Link to="/" style={{ color: "white", textDecoration: "none" }}>
               MarAbierto
             </Link>
           </Typography>
-          <Box sx={{ flexGrow: 1 }} />
+          <Box sx={{ flexGrow: 0.4 }} />
           <Typography
             variant="button"
             noWrap
@@ -73,7 +72,7 @@ const NavBar = () => {
               backgroundColor: "#03a9f4",
               padding: "10px 20px",
               borderRadius: "4px",
-              display: "inline-block",
+              display: { xs: "none", md: "block" },
             }}>
             Peaceful Groupies
           </Typography>
@@ -88,7 +87,7 @@ const NavBar = () => {
               backgroundColor: "#03a9f4",
               padding: "10px 20px",
               borderRadius: "4px",
-              display: "inline-block",
+              display: { xs: "none", md: "block" },
             }}>
             Bored Ape Yacht Club
           </Typography>
@@ -114,7 +113,7 @@ const NavBar = () => {
               backgroundColor: "#03a9f4",
               padding: "10px 20px",
               borderRadius: "4px",
-              display: "inline-block",
+              display: { xs: "none", md: "block" },
             }}>
             Azuki
           </Typography>
@@ -129,7 +128,7 @@ const NavBar = () => {
               backgroundColor: "#03a9f4",
               padding: "10px 20px",
               borderRadius: "4px",
-              display: "inline-block",
+              display: { xs: "none", md: "block" },
             }}>
             Nakamigos
           </Typography>
