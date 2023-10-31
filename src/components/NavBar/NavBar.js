@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import CartWidget from "../CartWidget/CartWidget";
 import SearchIcon from "@mui/icons-material/Search";
 import "./NavBar.css";
-// import { Link } from "react-router-dom";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
