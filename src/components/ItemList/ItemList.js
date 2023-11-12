@@ -1,5 +1,5 @@
 import React from "react";
-import Item from "../Item/Item";
+import NFTItem from "../NFTItem/NFTItem";
 import { Box, Card } from "@mui/material";
 const ItemList = ({ item }) => {
   return (
@@ -16,7 +16,7 @@ const ItemList = ({ item }) => {
             borderRadius: "15px",
             boxShadow: "5"
           }}>
-          <Item item={item} />
+          <NFTItem item={item} />
         </Card>
       ))}
     </Box>

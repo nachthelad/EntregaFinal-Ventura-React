@@ -10,38 +10,34 @@ const Item = styled(Paper)(({ theme }) => ({
   padding: theme.spacing(2),
   textAlign: "center",
   color: theme.palette.text.secondary,
-  [theme.breakpoints.down('md')]: {
-    padding: theme.spacing(1),
-  },
-  [theme.breakpoints.up('md')]: {
-    padding: theme.spacing(2),
-  }
 }));
 
 const ItemDetail = ({ item }) => {
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <Grid container spacing={2}>
-        <Grid item xs={12} md={7}>
-          <Item sx={{ marginLeft: { xs: 0, md: 30 }, marginTop: 10, maxWidth: 800 }}>
+    <Box sx={{ flexGrow: 1, display: 'flex', justifyContent: 'center' }}>
+      <Grid container spacing={2} justifyContent="center" alignItems="center">
+        <Grid item xs={12} md={7} sx={{ display: 'flex', justifyContent: 'center' }}>
+          <Item sx={{ marginTop: 10, maxWidth: { xs: '100%', md: 500 }, overflow: 'hidden' }}>
             <Box
               component="img"
               sx={{
-                height: { xs: 'auto', md: 633 },
-                width: { xs: '90%', md: 600 },
+                height: { xs: 'auto', md: 500 },
+                width: '100%',
+                objectFit: 'contain',
+                maxHeight: { md: 500 } 
               }}
-              alt={item.nombre}
-              src={item.imagen}
+              alt={item.title}
+              src={item.img}
             />
           </Item>
         </Grid>
-        <Grid item xs={12} md={4} sx={{ marginTop: { xs: 0, md: 20 }, maxWidth: { xs: '100%', md: 500 } }}>
-          <Item>
-            <Typography variant='h4'>{item.nombre}</Typography>
-            <Typography variant='h6'>{item.descripcion}</Typography>
-            <Typography variant='h6'> {item.precio} ETH</Typography>
+        <Grid item xs={12} md={5} sx={{ display: 'flex', justifyContent: 'center' }}>
+          <Item sx={{ marginTop: { xs: 10, md: 0 }, maxWidth: { xs: '100%', md: 400 } }}>
+            <Typography variant='h4'>{item.title}</Typography>
+            <Typography variant='h6'>{item.description}</Typography>
+            <Typography variant='h6'> {item.price} ETH</Typography>
             <Typography variant='button'> Cantidad: {item.stock}</Typography>
-            <Button variant="contained" sx={{display: 'block', margin: '0 auto'}}>Comprar</Button>
+            <Button variant="contained" sx={{ display: 'block', margin: '0 auto', marginTop: 2 }}>Comprar</Button>
           </Item>
         </Grid>
       </Grid>

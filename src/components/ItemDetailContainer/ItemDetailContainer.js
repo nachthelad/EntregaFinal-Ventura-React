@@ -1,32 +1,24 @@
-import React from 'react'
+import React from "react";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import Products from '../json/Products'
-import ItemDetail from '../ItemDetail/ItemDetail';
+import { getFirestore, doc, getDoc } from "firebase/firestore";
+import ItemDetail from "../ItemDetail/ItemDetail";
 import { Box } from "@mui/material";
 
 const ItemDetailCointainer = () => {
-
   const [item, setItem] = useState([]);
   const { id } = useParams();
 
   useEffect(() => {
-
-        const promesa = new Promise((resolve) => {
-          setTimeout(() => {
-            resolve(Products.find(item => item.id === parseInt(id)));
-          }, 2000);
-        });
-        promesa.then((data)=>{
-          setItem(data)
-        })
-
+    const queryDb = getFirestore();
+    const queryDoc = doc(queryDb, "items", id);
+    getDoc(queryDoc).then((res) => setItem({ id: res.id, ...res.data() }));
   }, [id]);
   return (
     <Box>
       <ItemDetail item={item} />
     </Box>
-  )
-}
+  );
+};
 
-export default ItemDetailCointainer
+export default ItemDetailCointainer;

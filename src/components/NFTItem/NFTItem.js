@@ -3,19 +3,19 @@ import { Link } from "react-router-dom";
 import { Typography, Card, Box, CardMedia } from "@mui/material";
 
 
-const Item = ({ item }) => {
+const NFTItem = ({ item }) => {
   return (
     <Link to={"/item/" + item.id}  style={{textDecoration: 'none'}}>
       <Card className="container">
         <Box>
           <CardMedia
             component="img"
-            alt={item.nombre}
+            alt={item.title}
             height="400"
-            image={item.imagen}
+            image={item.img}
           />
-          <Typography variant="h6" display="block" gutterBottom>
-            {item.nombre} - {item.precio} ETH
+          <Typography variant="h6" display="block">
+            {item.title} - {item.price} ETH
           </Typography>
         </Box>
       </Card>
@@ -23,4 +23,4 @@ const Item = ({ item }) => {
   );
 };
 
-export default Item;
+export default NFTItem;

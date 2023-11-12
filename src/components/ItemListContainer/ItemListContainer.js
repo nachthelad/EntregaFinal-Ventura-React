@@ -1,7 +1,13 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import "./ItemListContainer.css";
-import Products from "../json/Products";
+import {
+  getFirestore,
+  collection,
+  getDocs,
+  where,
+  query,
+} from "firebase/firestore";
 import ItemList from "../ItemList/ItemList";
 import Typography from "@mui/material/Typography";
 import { Box } from "@mui/material";
@@ -12,21 +18,18 @@ const ItemListContainer = ({ greeting, title }) => {
   const { id } = useParams();
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const data = await new Promise((resolve) => {
-          setTimeout(() => {
-            resolve(
-              id ? Products.filter((item) => item.categoria === id) : Products
-            );
-          }, 1000);
-        });
-        setItem(data);
-      } catch (error) {
-        console.log("Error", error);
-      }
-    };
-    fetchData();
+    const queryDb = getFirestore();
+    const queryCollection = collection(queryDb, "items");
+    if (id) {
+      const queryFilter = query(queryCollection, where("categoryId", "==", id));
+      getDocs(queryFilter).then((res) =>
+        setItem(res.docs.map((p) => ({ id: p.id, ...p.data() })))
+      );
+    } else {
+      getDocs(queryCollection).then((res) =>
+        setItem(res.docs.map((p) => ({ id: p.id, ...p.data() })))
+      );
+    }
   }, [id]);
 
   return (
@@ -39,7 +42,7 @@ const ItemListContainer = ({ greeting, title }) => {
           {title}
         </Typography>
         <ItemList item={item} />
-        </Box>
+      </Box>
     </div>
   );
 };

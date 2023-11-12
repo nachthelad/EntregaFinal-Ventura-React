@@ -65,7 +65,7 @@ const NavBar = () => {
             variant="button"
             noWrap
             component={Link}
-            to="/category/Peaceful Groupies"
+            to="/category/PeacefulGroupies"
             sx={{
               textDecoration: "none",
               color: "white",
@@ -80,7 +80,7 @@ const NavBar = () => {
             variant="button"
             noWrap
             component={Link}
-            to="/category/Bored Ape Yacht Club"
+            to="/category/BoredApeYachtClub"
             sx={{
               textDecoration: "none",
               color: "white",
