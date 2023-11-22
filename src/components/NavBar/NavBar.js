@@ -55,7 +55,7 @@ const NavBar = () => {
           <Typography
             variant="h5"
             component="div"
-            sx={{ display: { md: "block", marginRight: '10px' } }}>
+            sx={{ display: { md: "block", marginRight: "10px" } }}>
             <Link to="/" style={{ color: "white", textDecoration: "none" }}>
               MarAbierto
             </Link>
@@ -133,7 +133,14 @@ const NavBar = () => {
             Nakamigos
           </Typography>
           <Box sx={{ flexGrow: 1 }} />
-          <CartWidget />
+          <Box
+            component={Link}
+            to="/cart"
+            sx={{
+              color: "white",
+            }}>
+            <CartWidget />
+          </Box>
         </Toolbar>
       </AppBar>
     </Box>

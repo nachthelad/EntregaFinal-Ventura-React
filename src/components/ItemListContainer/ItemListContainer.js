@@ -24,7 +24,7 @@ const ItemListContainer = ({ greeting, title }) => {
       const queryFilter = query(queryCollection, where("categoryId", "==", id));
       getDocs(queryFilter).then((res) =>
         setItem(res.docs.map((p) => ({ id: p.id, ...p.data() })))
-      );
+        );
     } else {
       getDocs(queryCollection).then((res) =>
         setItem(res.docs.map((p) => ({ id: p.id, ...p.data() })))
