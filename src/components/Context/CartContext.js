@@ -8,18 +8,25 @@ function CartProvider({ children }) {
   const [cart, setCart] = useState([]);
 
   const agregarAlCarrito = (producto, cantidad) => {
-    cantidad = parseInt(cantidad, 10);
+    cantidad = +cantidad;
     const existeEnCarrito = cart.find(item => item.id === producto.id);
-
+  
     if (existeEnCarrito) {
-      setCart(cart.map(item => 
+      const updatedCart = cart.map(item => 
         item.id === producto.id 
           ? { ...item, cantidad: item.cantidad + cantidad } 
           : item
-      ));
+      );
+      setCart(updatedCart);
     } else {
-      setCart([...cart, { ...producto, cantidad }]);
+      const updatedCart = [...cart, { ...producto, cantidad }];
+      setCart(updatedCart);
     }
+  };
+  
+  const quitarDelCarrito = (id) => {
+    const nuevoCarrito = cart.filter((item) => item.id !== id);
+    setCart(nuevoCarrito);
   };
 
   const cantidadEnCarrito = () => {
@@ -33,11 +40,6 @@ function CartProvider({ children }) {
         return total + producto.cantidad * producto.price;
     }, 0);
 };
-
-  const quitarDelCarrito = (id) => {
-    const nuevoCarrito = cart.filter((item) => item.id !== id);
-    setCart(nuevoCarrito);
-  };
 
   return (
     <Provider

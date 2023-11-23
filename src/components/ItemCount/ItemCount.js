@@ -22,23 +22,27 @@ const ItemCount = ({ item, stockItems, addProduct }) => {
     }
 
     const handleAddProduct = () => {
-        addProduct(item, counter);
-        setCounter(1);
+        try {
+            addProduct(item, counter);
+            setCounter(1);
+        } catch (error) {
+            console.error(error);
+        }
     }
 
     return (
         <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 2 }}>
             <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                <IconButton onClick={decrementarStock} color="primary">
+                <IconButton onClick={decrementarStock} color="primary" disabled={stockItems <= 1} aria-label="Restar">
                     <RemoveCircleOutlineIcon />
                 </IconButton>
                 <Typography variant="h6">{counter}</Typography>
-                <IconButton onClick={incrementarStock} color="primary">
+                <IconButton onClick={incrementarStock} color="primary"  disabled={stockItems <= 1} aria-label="Sumar">
                     <AddCircleOutlineIcon />
                 </IconButton>
             </Box>
             <Button 
-                variant="outlined"  
+                variant="contained"  
                 onClick={handleAddProduct}
             >
                 Agregar al carrito
