@@ -20,7 +20,6 @@ const Checkout = () => {
     const [apellido, setApellido] = useState('');
     const [telefono, setTelefono] = useState('');
     const [email, setEmail] = useState('');
-    const [emailConfirmacion, setEmailConfirmacion] = useState('');
     const [error, setError] = useState('');
     const [ordenId, setOrdenId] = useState('');
   
@@ -29,13 +28,8 @@ const Checkout = () => {
     const manejadorFormulario = (event) => {
       event.preventDefault();
   
-      if (!nombre || !apellido || !telefono || !email || !emailConfirmacion) {
+      if (!nombre || !apellido || !telefono || !email) {
         setError('Por favor completa todos los campos');
-        return;
-      }
-  
-      if (email !== emailConfirmacion) {
-        setError('Los campos de email no coinciden');
         return;
       }
   
@@ -44,7 +38,7 @@ const Checkout = () => {
         items: cart.map((producto) => ({
           id: producto.id,
           nombre: producto.title,
-          cantidad: producto.quantity,
+          cantidad: producto.cantidad,
         })),
         total: total,
         fecha: new Date(),
@@ -88,14 +82,13 @@ const Checkout = () => {
       setApellido('');
       setTelefono('');
       setEmail('');
-      setEmailConfirmacion('');
     };
 
   return (
     <>
       <Paper style={{ padding: '20px', margin: '20px' }}>
         <Typography variant="h4" gutterBottom>
-          Rellena el formulario y nos contactaremos para enviar tus productos
+          Completa el formulario para que nos contactemos y coordinemos para el envío.
         </Typography>
 
         <form onSubmit={manejadorFormulario}>
@@ -111,13 +104,42 @@ const Checkout = () => {
             <Grid item xs={12}>
               <TextField
                 label="Nombre"
+                type="text"
                 fullWidth
                 value={nombre}
                 onChange={(e) => setNombre(e.target.value)}
               />
             </Grid>
 
-            {/* Repite para los demás campos: apellido, telefono, email, emailConfirmacion */}
+            <Grid item xs={12}>
+              <TextField
+                label="Apellido"
+                type="text"
+                fullWidth
+                value={apellido}
+                onChange={(e) => setApellido(e.target.value)}
+              />
+            </Grid>
+
+            <Grid item xs={12}>
+              <TextField
+                label="Teléfono"
+                type="number"
+                fullWidth
+                value={telefono}
+                onChange={(e) => setTelefono(e.target.value)}
+              />
+            </Grid>
+
+            <Grid item xs={12}>
+              <TextField
+                label="E-Mail"
+                type="email"
+                fullWidth
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+            </Grid>
 
             {error && (
               <Grid item xs={12}>
