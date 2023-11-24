@@ -1,5 +1,5 @@
-import { useState, useContext } from 'react';
-import { cartContext } from '../Context/CartContext';
+import { useState } from 'react';
+import { useCartContext } from '../Context/CartContext';
 import { Link } from 'react-router-dom';
 import {
   getFirestore,
@@ -23,7 +23,7 @@ const Checkout = () => {
     const [error, setError] = useState('');
     const [ordenId, setOrdenId] = useState('');
   
-    const { cart, removeProduct, precioTotal } = useContext(cartContext);
+    const { cart, removeProduct, totalPrice } = useCartContext();
   
     const manejadorFormulario = (event) => {
       event.preventDefault();
@@ -33,12 +33,12 @@ const Checkout = () => {
         return;
       }
   
-      const total = precioTotal();
+      const total = totalPrice();
       const orden = {
-        items: cart.map((producto) => ({
-          id: producto.id,
-          nombre: producto.title,
-          cantidad: producto.cantidad,
+        items: cart.map((product) => ({
+          id: product.id,
+          nombre: product.title,
+          quantity: product.quantity,
         })),
         total: total,
         fecha: new Date(),
@@ -51,19 +51,19 @@ const Checkout = () => {
       Promise.all(
         orden.items.map(async (productoOrden) => {
           const db = getFirestore();
-          const productoRef = doc(db, 'products', productoOrden.id);
+          const productoRef = doc(db, 'items', productoOrden.id);
   
           const productoDoc = await getDoc(productoRef);
           const stockActual = productoDoc.data().stock;
   
           await updateDoc(productoRef, {
-            stock: stockActual - productoOrden.cantidad,
+            stock: stockActual - productoOrden.quantity,
           });
         })
       )
       .then(() => {
         const db = getFirestore();
-        addDoc(collection(db, 'orders'), orden)
+        addDoc(collection(db, 'order'), orden)
           .then((docRef) => {
             setOrdenId(docRef.id);
             removeProduct();
@@ -93,10 +93,13 @@ const Checkout = () => {
 
         <form onSubmit={manejadorFormulario}>
           <Grid container spacing={2}>
-            {cart.map((producto) => (
-              <Grid item xs={12} sm={6} key={producto.id}>
+            {cart.map((product) => (
+              <Grid item xs={12} sm={12} key={product.id}>
                 <Typography>
-                  {producto.nombre} {producto.cantidad} - ${producto.precio}
+                  Tu pedido es el siguiente
+                </Typography>
+                <Typography>
+                  {product.title} x {product.quantity} - {product.price} ETH
                 </Typography>
               </Grid>
             ))}

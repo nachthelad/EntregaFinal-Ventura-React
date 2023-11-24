@@ -1,11 +1,11 @@
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 import { styled } from "@mui/material/styles";
 import { Box, Typography, Button } from "@mui/material";
 import { Link as RouterLink } from "react-router-dom";
 import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Unstable_Grid2";
 import ItemCount from "../ItemCount/ItemCount";
-import { cartContext } from "../Context/CartContext";
+import { useCartContext } from "../Context/CartContext";
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
@@ -17,11 +17,10 @@ const Item = styled(Paper)(({ theme }) => ({
 
 const ItemDetail = ({ item }) => {
   const [goToCart, setGoToCart] = useState(false);
-  const { agregarAlCarrito } = useContext(cartContext);
-
-  const onAdd = (cantidad) => {
+  const { addProduct } = useCartContext();
+  const onAdd = (quantity) => {
     setGoToCart(true);
-    agregarAlCarrito(item, cantidad);
+    addProduct(item, quantity);
   };
 
   return (
@@ -69,9 +68,16 @@ const ItemDetail = ({ item }) => {
               variant="contained"
               sx={{ display: "block", margin: "0 auto", marginTop: 2 }}>
               {goToCart ? (
-                <Button component={RouterLink} to="/cart">Ir al carrito</Button>
+                <Button component={RouterLink} to="/cart">
+                  Ir al carrito
+                </Button>
               ) : (
-                <ItemCount item={item} stockItems={item.stock} addProduct={onAdd} />
+                <ItemCount
+                  item={item}
+                  initial={0}
+                  stock={item.stock}
+                  onAdd={onAdd}
+                />
               )}
             </Box>
           </Item>

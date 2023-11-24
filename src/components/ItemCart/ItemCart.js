@@ -1,9 +1,9 @@
-import React, { useContext } from 'react';
-import { cartContext } from "../Context/CartContext";
+import React from 'react';
+import { useCartContext } from "../Context/CartContext";
 import { Box, Typography, Card, CardMedia, CardContent, Button, Grid } from '@mui/material';
 
 const ItemCart = ({ product }) => {
-    const { quitarDelCarrito } = useContext(cartContext);
+    const { removeProduct } = useCartContext();
 
     return (
         <Card sx={{ display: 'flex', marginBottom: 2, backgroundColor: 'transparent' }}>
@@ -23,7 +23,7 @@ const ItemCart = ({ product }) => {
                         </Grid>
                         <Grid item xs={12} sm={3}>
                             <Typography variant="subtitle1">
-                                Cantidad: {product.cantidad}
+                                Cantidad: {product.quantity}
                             </Typography>
                         </Grid>
                         <Grid item xs={12} sm={3}>
@@ -33,7 +33,7 @@ const ItemCart = ({ product }) => {
                         </Grid>
                         <Grid item xs={12} sm={3}>
                             <Typography variant="subtitle1">
-                                Subtotal: {product.cantidad * product.price} ETH
+                                Subtotal: {product.quantity * product.price} ETH
                             </Typography>
                         </Grid>
                     </Grid>
@@ -42,7 +42,7 @@ const ItemCart = ({ product }) => {
                     <Button 
                         variant="contained" 
                         color="secondary" 
-                        onClick={() => quitarDelCarrito(product.id)}>
+                        onClick={() => removeProduct(product.id)}>
                         Eliminar
                     </Button>
                 </Box>

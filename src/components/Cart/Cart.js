@@ -1,11 +1,15 @@
-import React, { useContext } from "react";
+import React from "react";
 import ItemCart from "../ItemCart/ItemCart";
-import { cartContext } from "../Context/CartContext";
+import { useCartContext } from "../Context/CartContext";
 import { Link as RouterLink } from "react-router-dom";
 import { Box, Typography, Button, Link, Container } from "@mui/material";
 
 const Cart = () => {
-  const { cart, precioTotal } = useContext(cartContext);
+  const { cart, totalPrice, clearCart } = useCartContext();
+
+  const handleCheckout = () => {
+    clearCart();
+  };
 
   if (cart.length === 0) {
     return (
@@ -28,10 +32,10 @@ const Cart = () => {
         {cart.map((product) => (
           <ItemCart key={product.id} product={product} />
         ))}
-        <Typography variant="h6" sx={{ mt: 2, color: 'white'  }}>
-          Total: {precioTotal()} ETH
+        <Typography variant="h6" sx={{ mt: 2, color: 'white' }}>
+          Total: {totalPrice().toFixed(3)} ETH
         </Typography>
-        <Link component={RouterLink} to="/checkout" underline="none">
+        <Link component={RouterLink} onClick={handleCheckout} to="/checkout" underline="none">
           <Button variant="contained" color="primary" sx={{ mt: 1 }}>
             Finalizar Compra
           </Button>

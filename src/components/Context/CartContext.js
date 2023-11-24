@@ -1,52 +1,55 @@
-import { createContext, useState } from "react";
+import React, { useState, useContext } from "react";
 
-export const cartContext = createContext({ cart: [] });
+const CartContext = React.createContext("");
 
-const { Provider } = cartContext;
+export const useCartContext = () => useContext(CartContext);
 
-function CartProvider({ children }) {
+const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
 
-  const agregarAlCarrito = (producto, cantidad) => {
-    cantidad = +cantidad;
-    const existeEnCarrito = cart.find(item => item.id === producto.id);
-  
-    if (existeEnCarrito) {
-      const updatedCart = cart.map(item => 
-        item.id === producto.id 
-          ? { ...item, cantidad: item.cantidad + cantidad } 
-          : item
+  const addProduct = (item, quantity) => {
+    if (itemExists(item.id)) {
+      setCart(
+        cart.map((product) => {
+          return product.id === item.id
+            ? { ...product, quantity: product.quantity + quantity }
+            : product;
+        })
       );
-      setCart(updatedCart);
     } else {
-      const updatedCart = [...cart, { ...producto, cantidad }];
-      setCart(updatedCart);
+      setCart([...cart, { ...item, quantity }]);
     }
   };
-  
-  const quitarDelCarrito = (id) => {
-    const nuevoCarrito = cart.filter((item) => item.id !== id);
-    setCart(nuevoCarrito);
+
+  const totalPrice = () => {
+    return cart.reduce((prev, act) => prev + act.quantity * act.price, 0);
   };
 
-  const cantidadEnCarrito = () => {
-    return cart.reduce((acumulado, actual) => {
-      return acumulado + (actual.cantidad || 0); 
-    }, 0);
-  };
+  const totalProducts = () =>
+    cart.reduce((acc, actualProduct) => acc + actualProduct.quantity, 0);
 
-  const precioTotal = () => {
-    return cart.reduce((total, producto) => {
-        return total + producto.cantidad * producto.price;
-    }, 0);
-};
+  const clearCart = () => setCart([]);
+
+  const itemExists = (id) =>
+    cart.find((product) => product.id === id) ? true : false;
+
+  const removeProduct = (id) =>
+    setCart(cart.filter((product) => product.id !== id));
 
   return (
-    <Provider
-      value={{ cart, agregarAlCarrito, cantidadEnCarrito, quitarDelCarrito, precioTotal }}>
+    <CartContext.Provider
+      value={{
+        clearCart,
+        itemExists,
+        removeProduct,
+        addProduct,
+        totalPrice,
+        totalProducts,
+        cart,
+      }}>
       {children}
-    </Provider>
+    </CartContext.Provider>
   );
-}
+};
 
 export default CartProvider;

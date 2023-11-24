@@ -1,17 +1,21 @@
-import React, { useContext } from "react";
+import React from "react";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { Badge, Box, IconButton } from "@mui/material";
-import { cartContext } from "../Context/CartContext";
+import { useCartContext } from "../Context/CartContext";
 
 const CartWidget = () => {
-  const { cantidadEnCarrito} = useContext(cartContext);
+  const { totalProducts } = useCartContext();
+  const itemCount = totalProducts();
 
   return (
     <Box sx={{ display: { md: "flex" } }}>
       <IconButton size="large" color="inherit">
-          <Badge badgeContent={cantidadEnCarrito()} color="error">
-          <ShoppingCartIcon size="large" fontSize="inherit" />
-        </Badge>
+        {itemCount > 0 && (
+          <Badge badgeContent={itemCount} color="error">
+            <ShoppingCartIcon fontSize="inherit" />
+          </Badge>
+        )}
+        {itemCount === 0 && <ShoppingCartIcon fontSize="inherit" />}
       </IconButton>
     </Box>
   );
