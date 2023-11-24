@@ -23,7 +23,7 @@ const ItemCount = ({ initial, stock, onAdd }) => {
     return (
         <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 2 }}>
             <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                <IconButton onClick={decrease} color="primary" disabled={count < 1} aria-label="Restar">
+                <IconButton onClick={decrease} color="primary" disabled={count <= 1} aria-label="Restar">
                     <RemoveCircleOutlineIcon />
                 </IconButton>
                 <Typography variant="h6">{count}</Typography>
