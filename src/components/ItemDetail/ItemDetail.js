@@ -74,7 +74,7 @@ const ItemDetail = ({ item }) => {
               ) : (
                 <ItemCount
                   item={item}
-                  initial={0}
+                  initial={1}
                   stock={item.stock}
                   onAdd={onAdd}
                 />
